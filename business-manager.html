@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="google-adsense-account" content="ca-pub-6293436049965141">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6293436049965141" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8BNY8PJVWP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8BNY8PJVWP');
+</script>
+<title>Free Business Manager: Inventory, Sales, Expenses &amp; Profit and Loss Tracker</title>
+<meta name="description" content="Free all-in-one business manager for any shop or small business. Track stock, product cost and price, record sales and expenses, and see revenue, profit and loss instantly. No sign-up, data stays on your device.">
+<meta name="keywords" content="free inventory management, profit and loss calculator, small business tracker, stock management tool, sales tracker, expense tracker, shop management, product cost and price calculator">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://muzamil689.github.io/business-manager.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Business Manager: Stock, Sales, Expenses &amp; Profit and Loss">
+<meta property="og:description" content="Manage stock, prices, sales and expenses in one free tool and see your profit and loss at a glance.">
+<meta property="og:url" content="https://muzamil689.github.io/business-manager.html">
+<style>
+:root{
+  --bg:#f4f5f7; --card:#fff; --text:#1b1d21; --muted:#6b7280; --accent:#2563eb; --accent-t:#fff;
+  --border:#e5e7eb; --soft:#eef0f3; --good:#16a34a; --bad:#dc2626; --warn:#d97706;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#14161a; --card:#1f2226; --text:#f1f2f4; --muted:#9aa0a8; --accent:#3b82f6; --border:#33373d; --soft:#26292e; --good:#22c55e; --bad:#f87171; --warn:#fbbf24;}
+}
+:root[data-theme="dark"]{--bg:#14161a; --card:#1f2226; --text:#f1f2f4; --muted:#9aa0a8; --accent:#3b82f6; --border:#33373d; --soft:#26292e; --good:#22c55e; --bad:#f87171; --warn:#fbbf24;}
+*{box-sizing:border-box;}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);}
+body{margin:0; background:var(--bg); color:var(--text); font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif; line-height:1.5;}
+.wrap{max-width:760px; margin:0 auto; padding:14px;}
+header{text-align:center; padding:10px 6px 4px;}
+header a.home{display:inline-block; font-size:13px; color:var(--accent); text-decoration:none; margin-bottom:6px;}
+h1{font-size:21px; margin:0 0 4px;}
+header p{margin:0 auto; color:var(--muted); font-size:14px; max-width:560px;}
+.tabs{position:sticky; top:env(safe-area-inset-top,0px); z-index:5; display:flex; gap:6px; overflow-x:auto; padding:10px 14px; background:var(--bg); border-bottom:1px solid var(--border);}
+.tab{flex:0 0 auto; padding:8px 14px; border-radius:20px; background:var(--soft); color:var(--text); font-size:14px; cursor:pointer; border:none;}
+.tab.on{background:var(--accent); color:var(--accent-t); font-weight:600;}
+.view{display:none;} .view.on{display:block;}
+.card{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:14px; margin:12px 0;}
+.card h2{font-size:16px; margin:0 0 10px;}
+.grid{display:grid; grid-template-columns:repeat(2,1fr); gap:10px;}
+.stat{background:var(--card); border:1px solid var(--border); border-radius:12px; padding:12px;}
+.stat small{display:block; color:var(--muted); font-size:12px;}
+.stat b{font-size:19px; word-break:break-word;}
+.stat.big{grid-column:span 2;}
+.good{color:var(--good);} .bad{color:var(--bad);} .warn{color:var(--warn);}
+label{display:block; font-size:12px; color:var(--muted); margin:8px 0 3px;}
+input,select,textarea{width:100%; font-size:16px; padding:10px; border-radius:10px; border:1px solid var(--border); background:var(--bg); color:var(--text);}
+.row2{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+button.btn{font-size:15px; padding:10px 14px; border-radius:10px; border:none; background:var(--accent); color:var(--accent-t); cursor:pointer; margin-top:12px;}
+button.btn.alt{background:var(--soft); color:var(--text);}
+button.sm{font-size:13px; padding:6px 10px; border-radius:8px; border:none; background:var(--soft); color:var(--text); cursor:pointer; margin:6px 6px 0 0;}
+button.sm.danger{color:var(--bad);}
+.item{border-top:1px solid var(--border); padding:10px 0;}
+.item:first-child{border-top:none;}
+.item .top{display:flex; justify-content:space-between; gap:8px; align-items:flex-start;}
+.item .meta{font-size:13px; color:var(--muted);}
+.badge{font-size:12px; padding:2px 8px; border-radius:10px; background:var(--soft);}
+.badge.low{background:rgba(220,38,38,.15); color:var(--bad);}
+.msg{font-size:13px; margin-top:8px; min-height:18px;}
+.bars{display:flex; align-items:flex-end; gap:6px; height:120px; margin-top:8px;}
+.bar{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%;}
+.bar .pair{display:flex; align-items:flex-end; gap:2px; height:100px; width:100%; justify-content:center;}
+.bar i{display:block; width:42%; min-height:2px; border-radius:3px 3px 0 0; background:var(--accent);}
+.bar i.p{background:var(--good);}
+.bar span{font-size:10px; color:var(--muted); margin-top:3px;}
+.legend{font-size:12px; color:var(--muted); margin-top:6px;}
+.legend em{display:inline-block; width:10px; height:10px; border-radius:2px; background:var(--accent); margin:0 4px 0 0;}
+.legend em.p{background:var(--good); margin-left:10px;}
+.empty{color:var(--muted); font-size:14px; padding:6px 0;}
+details{margin:10px 0;} summary{cursor:pointer; font-weight:600; font-size:15px;}
+.info p{color:var(--muted); font-size:14px; margin:6px 0;}
+footer{text-align:center; color:var(--muted); font-size:12px; padding:20px 10px 40px;}
+footer a{color:var(--muted);}
+#toast{position:fixed; left:50%; bottom:calc(20px + env(safe-area-inset-bottom,0px)); transform:translateX(-50%); background:#111; color:#fff; padding:10px 16px; border-radius:20px; font-size:14px; opacity:0; pointer-events:none; transition:opacity .2s; z-index:50;}
+#toast.show{opacity:.95;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="home" href="index.html">&larr; Calculator &amp; Converter Tools</a>
+    <h1 id="title">Business Manager</h1>
+    <p>Track stock, prices, sales and expenses, and see your profit and loss. Free, no sign-up. Your data stays on this device.</p>
+  </header>
+</div>
+<nav class="tabs" id="tabs">
+  <button class="tab on" data-v="dash">Dashboard</button>
+  <button class="tab" data-v="prod">Products</button>
+  <button class="tab" data-v="sale">Sales</button>
+  <button class="tab" data-v="exp">Expenses</button>
+  <button class="tab" data-v="set">Settings</button>
+</nav>
+
+<div class="wrap">
+<!-- DASHBOARD -->
+<section class="view on" id="v-dash">
+  <div class="card">
+    <label for="period">Period</label>
+    <select id="period"><option value="today">Today</option><option value="7">Last 7 days</option><option value="30" selected>Last 30 days</option><option value="all">All time</option></select>
+  </div>
+  <div class="grid" id="stats"></div>
+  <div class="card"><h2>Last 7 days</h2><div class="bars" id="bars"></div><div class="legend"><em></em>Revenue<em class="p"></em>Gross profit</div></div>
+  <div class="card"><h2>Low stock</h2><div id="lowList"></div></div>
+  <div class="card"><h2>Top products by profit</h2><div id="topList"></div></div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="view" id="v-prod">
+  <div class="card">
+    <h2 id="pfTitle">Add product</h2>
+    <label for="pName">Product name</label><input id="pName" placeholder="e.g. Blue T-shirt">
+    <div class="row2">
+      <div><label for="pCost">Cost price (per unit)</label><input id="pCost" type="number" inputmode="decimal" min="0" step="any"></div>
+      <div><label for="pPrice">Selling price (per unit)</label><input id="pPrice" type="number" inputmode="decimal" min="0" step="any"></div>
+    </div>
+    <div class="row2">
+      <div><label for="pStock">Stock quantity</label><input id="pStock" type="number" inputmode="numeric" min="0" step="any"></div>
+      <div><label for="pLow">Low stock alert at</label><input id="pLow" type="number" inputmode="numeric" min="0" step="any" value="5"></div>
+    </div>
+    <button class="btn" id="pSave">Save product</button>
+    <button class="btn alt" id="pCancel" style="display:none">Cancel edit</button>
+    <div class="msg" id="pMsg"></div>
+  </div>
+  <div class="card"><h2>Your products</h2><div id="pList"></div></div>
+</section>
+
+<!-- SALES -->
+<section class="view" id="v-sale">
+  <div class="card">
+    <h2>Record a sale</h2>
+    <label for="sProd">Product</label><select id="sProd"></select>
+    <div class="row2">
+      <div><label for="sQty">Quantity</label><input id="sQty" type="number" inputmode="numeric" min="0" step="any" value="1"></div>
+      <div><label for="sPrice">Unit price</label><input id="sPrice" type="number" inputmode="decimal" min="0" step="any"></div>
+    </div>
+    <label for="sDate">Date</label><input id="sDate" type="date">
+    <button class="btn" id="sSave">Add sale</button>
+    <div class="msg" id="sMsg"></div>
+  </div>
+  <div class="card"><h2>Sales history</h2><div id="sList"></div></div>
+</section>
+
+<!-- EXPENSES -->
+<section class="view" id="v-exp">
+  <div class="card">
+    <h2>Add expense</h2>
+    <label for="eDesc">Description</label><input id="eDesc" placeholder="e.g. Shop rent">
+    <div class="row2">
+      <div><label for="eAmt">Amount</label><input id="eAmt" type="number" inputmode="decimal" min="0" step="any"></div>
+      <div><label for="eCat">Category</label><select id="eCat"><option>Rent</option><option>Salaries</option><option>Utilities</option><option>Marketing</option><option>Transport</option><option>Other</option></select></div>
+    </div>
+    <label for="eDate">Date</label><input id="eDate" type="date">
+    <button class="btn" id="eSave">Add expense</button>
+    <div class="msg" id="eMsg"></div>
+  </div>
+  <div class="card"><h2>Expense history</h2><div id="eList"></div></div>
+</section>
+
+<!-- SETTINGS -->
+<section class="view" id="v-set">
+  <div class="card">
+    <h2>Business settings</h2>
+    <label for="stBiz">Business name</label><input id="stBiz" placeholder="My Shop">
+    <label for="stCur">Currency symbol</label><input id="stCur" maxlength="6" placeholder="$ or Rs">
+    <button class="btn" id="stSave">Save settings</button>
+  </div>
+  <div class="card">
+    <h2>Backup and restore</h2>
+    <p class="meta" style="font-size:13px;color:var(--muted);margin:0 0 6px">Your data is saved only in this browser. Make a backup now and then, and keep it somewhere safe.</p>
+    <button class="btn" id="bMake">Create backup text</button>
+    <button class="btn alt" id="bDl">Download backup file</button>
+    <label for="bText">Backup text (copy it, or paste an old backup here and press Restore)</label>
+    <textarea id="bText" rows="5"></textarea>
+    <button class="btn alt" id="bRestore">Restore from text</button>
+    <div class="msg" id="bMsg"></div>
+  </div>
+  <div class="card">
+    <h2>Start over</h2>
+    <button class="sm" id="sampleBtn">Load sample data</button>
+    <button class="sm danger" id="resetBtn">Erase all data</button>
+    <div class="msg" id="rMsg"></div>
+  </div>
+</section>
+
+<div class="card info">
+  <h2>How it works</h2>
+  <details><summary>How is profit calculated?</summary><p>Revenue is the total of your sales. Cost of goods is what those items cost you when you sold them. Gross profit is revenue minus cost of goods. Net profit or loss is gross profit minus your expenses.</p></details>
+  <details><summary>Does it work for any kind of business?</summary><p>Yes. Shops, online sellers, cafes, workshops and freelancers who sell items can add their products with a cost and a price, record sales and track expenses like rent and salaries.</p></details>
+  <details><summary>Where is my data stored?</summary><p>Only in your own browser on this device. Nothing is sent to a server. Use the backup option in Settings so you do not lose it if you clear your browser data.</p></details>
+  <details><summary>Does stock update automatically?</summary><p>Yes. Each sale reduces the stock of that product, and deleting a sale puts the items back.</p></details>
+</div>
+<footer><a href="index.html">Home</a> &middot; <a href="index.html#privacy-page">Privacy Policy</a> &middot; <a href="index.html#contact-page">Contact</a></footer>
+</div>
+<div id="toast"></div>
+
+<script>
+(function(){
+var KEY='bm_v1';
+var db={products:[],sales:[],expenses:[],settings:{cur:'$',biz:''}};
+var editId=null, armed=null, armTimer=null, restockId=null;
+
+function load(){try{var r=localStorage.getItem(KEY); if(r){var d=JSON.parse(r); db.products=d.products||[]; db.sales=d.sales||[]; db.expenses=d.expenses||[]; db.settings=Object.assign({cur:'$',biz:''},d.settings||{});}}catch(e){}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(db));}catch(e){toast('Could not save (browser storage blocked)');}}
+function $(id){return document.getElementById(id);}
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,6);}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function num(v){var n=parseFloat(v); return isNaN(n)?0:n;}
+function money(n){var neg=n<0; var s=Math.abs(n).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}); return (neg?'-':'')+esc(db.settings.cur)+s;}
+function qty(n){return (Math.round(n*100)/100).toString();}
+function today(){var d=new Date(); return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);}
+function dayStr(offset){var d=new Date(); d.setDate(d.getDate()-offset); return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);}
+function toast(t){var e=$('toast'); e.textContent=t; e.className='show'; setTimeout(function(){e.className='';},2200);}
+function say(id,t,cls){var e=$(id); e.textContent=t; e.className='msg '+(cls||'');}
+function sum(a,f){var t=0; for(var i=0;i<a.length;i++) t+=f(a[i]); return t;}
+
+/* tabs */
+function show(v){
+  document.querySelectorAll('.view').forEach(function(x){x.classList.toggle('on',x.id==='v-'+v);});
+  document.querySelectorAll('.tab').forEach(function(x){x.classList.toggle('on',x.dataset.v===v);});
+  window.scrollTo(0,0); renderAll();
+}
+$('tabs').addEventListener('click',function(e){var b=e.target.closest('.tab'); if(b) show(b.dataset.v);});
+
+/* two-step delete */
+function arm(key,btn,label){
+  if(armed===key){armed=null; return true;}
+  armed=key; btn.textContent='Tap again to confirm';
+  clearTimeout(armTimer); armTimer=setTimeout(function(){armed=null; renderAll();},3000);
+  return false;
+}
+
+/* dashboard */
+function rangeStart(){var p=$('period').value; if(p==='all') return ''; if(p==='today') return today(); return dayStr(parseInt(p,10)-1);}
+function renderDash(){
+  var st=rangeStart();
+  var S=db.sales.filter(function(s){return !st||s.date>=st;});
+  var E=db.expenses.filter(function(e){return !st||e.date>=st;});
+  var rev=sum(S,function(s){return s.price*s.qty;});
+  var cogs=sum(S,function(s){return s.cost*s.qty;});
+  var gross=rev-cogs, exp=sum(E,function(e){return e.amount;}), net=gross-exp;
+  var stockCost=sum(db.products,function(p){return p.cost*p.stock;});
+  var stockRetail=sum(db.products,function(p){return p.price*p.stock;});
+  var margin=rev>0?(gross/rev*100):0;
+  var h='';
+  h+='<div class="stat big"><small>'+(net>=0?'Net profit':'Net loss')+'</small><b class="'+(net>=0?'good':'bad')+'">'+money(net)+'</b></div>';
+  h+='<div class="stat"><small>Revenue</small><b>'+money(rev)+'</b></div>';
+  h+='<div class="stat"><small>Cost of goods sold</small><b>'+money(cogs)+'</b></div>';
+  h+='<div class="stat"><small>Gross profit</small><b class="'+(gross>=0?'good':'bad')+'">'+money(gross)+'</b></div>';
+  h+='<div class="stat"><small>Expenses</small><b>'+money(exp)+'</b></div>';
+  h+='<div class="stat"><small>Gross margin</small><b>'+margin.toFixed(1)+'%</b></div>';
+  h+='<div class="stat"><small>Sales count</small><b>'+S.length+'</b></div>';
+  h+='<div class="stat"><small>Stock value (at cost)</small><b>'+money(stockCost)+'</b></div>';
+  h+='<div class="stat"><small>Stock value (at selling price)</small><b>'+money(stockRetail)+'</b></div>';
+  $('stats').innerHTML=h;
+  $('title').textContent=db.settings.biz?db.settings.biz:'Business Manager';
+
+  // last 7 days bars
+  var days=[], i, max=1;
+  for(i=6;i>=0;i--){
+    var ds=dayStr(i);
+    var ss=db.sales.filter(function(s){return s.date===ds;});
+    var r=sum(ss,function(s){return s.price*s.qty;}), g=r-sum(ss,function(s){return s.cost*s.qty;});
+    days.push({d:ds,r:r,g:g}); if(r>max) max=r;
+  }
+  var b='';
+  days.forEach(function(x){
+    var wd=new Date(x.d+'T00:00:00').toLocaleDateString(undefined,{weekday:'short'});
+    b+='<div class="bar"><div class="pair"><i style="height:'+Math.round(x.r/max*100)+'%"></i><i class="p" style="height:'+Math.max(0,Math.round(x.g/max*100))+'%"></i></div><span>'+esc(wd)+'</span></div>';
+  });
+  $('bars').innerHTML=b;
+
+  var low=db.products.filter(function(p){return p.stock<=p.low;});
+  $('lowList').innerHTML=low.length?low.map(function(p){return '<div class="item"><div class="top"><span>'+esc(p.name)+'</span><span class="badge low">'+qty(p.stock)+' left</span></div></div>';}).join(''):'<div class="empty">Nothing is running low.</div>';
+
+  var agg={};
+  S.forEach(function(s){var k=s.name; agg[k]=agg[k]||{n:k,q:0,p:0}; agg[k].q+=s.qty; agg[k].p+=(s.price-s.cost)*s.qty;});
+  var top=Object.keys(agg).map(function(k){return agg[k];}).sort(function(a,b){return b.p-a.p;}).slice(0,5);
+  $('topList').innerHTML=top.length?top.map(function(t){return '<div class="item"><div class="top"><span>'+esc(t.n)+'</span><b class="'+(t.p>=0?'good':'bad')+'">'+money(t.p)+'</b></div><div class="meta">'+qty(t.q)+' sold</div></div>';}).join(''):'<div class="empty">No sales in this period yet.</div>';
+}
+
+/* products */
+function renderProducts(){
+  var el=$('pList');
+  if(!db.products.length){el.innerHTML='<div class="empty">No products yet. Add your first product above, or load sample data in Settings.</div>'; return;}
+  el.innerHTML=db.products.map(function(p){
+    var m=p.price>0?((p.price-p.cost)/p.price*100):0;
+    var lowc=p.stock<=p.low;
+    var restock=restockId===p.id?'<div class="row2" style="margin-top:8px"><input id="rs-'+p.id+'" type="number" inputmode="numeric" min="0" step="any" placeholder="Quantity to add"><button class="sm" data-a="rsok" data-id="'+p.id+'" style="margin:0">Add</button></div>':'';
+    return '<div class="item"><div class="top"><b>'+esc(p.name)+'</b><span class="badge'+(lowc?' low':'')+'">'+qty(p.stock)+' in stock</span></div>'+
+      '<div class="meta">Cost '+money(p.cost)+' &rarr; Price '+money(p.price)+' &middot; Profit '+money(p.price-p.cost)+' ('+m.toFixed(0)+'% margin)</div>'+
+      '<button class="sm" data-a="edit" data-id="'+p.id+'">Edit</button><button class="sm" data-a="rs" data-id="'+p.id+'">+ Add stock</button><button class="sm danger" data-a="del" data-id="'+p.id+'">Delete</button>'+restock+'</div>';
+  }).join('');
+}
+function resetPForm(){editId=null; ['pName','pCost','pPrice','pStock'].forEach(function(i){$(i).value='';}); $('pLow').value='5'; $('pfTitle').textContent='Add product'; $('pSave').textContent='Save product'; $('pCancel').style.display='none';}
+$('pSave').onclick=function(){
+  var name=$('pName').value.trim(), cost=num($('pCost').value), price=num($('pPrice').value), stock=num($('pStock').value), low=num($('pLow').value);
+  if(!name){say('pMsg','Please enter a product name.','bad'); return;}
+  if(price<=0){say('pMsg','Please enter a selling price.','bad'); return;}
+  if(editId){var p=db.products.filter(function(x){return x.id===editId;})[0]; if(p){p.name=name;p.cost=cost;p.price=price;p.stock=stock;p.low=low;}}
+  else db.products.push({id:uid(),name:name,cost:cost,price:price,stock:stock,low:low});
+  save(); say('pMsg',editId?'Product updated.':'Product added.','good'); resetPForm(); renderAll();
+};
+$('pCancel').onclick=function(){resetPForm(); say('pMsg','');};
+$('pList').addEventListener('click',function(e){
+  var b=e.target.closest('button'); if(!b) return; var a=b.dataset.a, id=b.dataset.id;
+  var p=db.products.filter(function(x){return x.id===id;})[0];
+  if(a==='edit'&&p){editId=id; $('pName').value=p.name; $('pCost').value=p.cost; $('pPrice').value=p.price; $('pStock').value=p.stock; $('pLow').value=p.low; $('pfTitle').textContent='Edit product'; $('pSave').textContent='Update product'; $('pCancel').style.display='inline-block'; window.scrollTo(0,0);}
+  if(a==='rs'){restockId=restockId===id?null:id; renderProducts();}
+  if(a==='rsok'&&p){var q=num($('rs-'+id).value); if(q>0){p.stock+=q; save(); restockId=null; toast('Stock updated'); renderAll();}}
+  if(a==='del'&&p){if(arm('p'+id,b)){db.products=db.products.filter(function(x){return x.id!==id;}); save(); toast('Product deleted'); renderAll();}}
+});
+
+/* sales */
+function fillSaleSelect(){
+  var s=$('sProd'), cur=s.value;
+  s.innerHTML=db.products.length?db.products.map(function(p){return '<option value="'+p.id+'">'+esc(p.name)+' ('+qty(p.stock)+' in stock)</option>';}).join(''):'<option value="">Add a product first</option>';
+  if(cur) s.value=cur; syncPrice();
+}
+function syncPrice(){var p=db.products.filter(function(x){return x.id===$('sProd').value;})[0]; if(p) $('sPrice').value=p.price;}
+$('sProd').onchange=syncPrice;
+function renderSales(){
+  fillSaleSelect();
+  var L=db.sales.slice().sort(function(a,b){return a.date<b.date?1:(a.date>b.date?-1:0);}).slice(0,100);
+  $('sList').innerHTML=L.length?L.map(function(s){var pr=(s.price-s.cost)*s.qty; return '<div class="item"><div class="top"><b>'+esc(s.name)+'</b><b>'+money(s.price*s.qty)+'</b></div><div class="meta">'+esc(s.date)+' &middot; '+qty(s.qty)+' &times; '+money(s.price)+' &middot; Profit <span class="'+(pr>=0?'good':'bad')+'">'+money(pr)+'</span></div><button class="sm danger" data-id="'+s.id+'">Delete</button></div>';}).join(''):'<div class="empty">No sales recorded yet.</div>';
+}
+$('sSave').onclick=function(){
+  var p=db.products.filter(function(x){return x.id===$('sProd').value;})[0], q=num($('sQty').value), price=num($('sPrice').value), d=$('sDate').value||today();
+  if(!p){say('sMsg','Add a product first.','bad'); return;}
+  if(q<=0){say('sMsg','Enter a quantity above zero.','bad'); return;}
+  if(q>p.stock){say('sMsg','Not enough stock. Only '+qty(p.stock)+' left.','bad'); return;}
+  db.sales.push({id:uid(),pid:p.id,name:p.name,qty:q,price:price,cost:p.cost,date:d});
+  p.stock-=q; save(); say('sMsg','Sale added.','good'); $('sQty').value='1'; renderAll();
+};
+$('sList').addEventListener('click',function(e){
+  var b=e.target.closest('button'); if(!b) return; var id=b.dataset.id;
+  var s=db.sales.filter(function(x){return x.id===id;})[0]; if(!s) return;
+  if(arm('s'+id,b)){var p=db.products.filter(function(x){return x.id===s.pid;})[0]; if(p) p.stock+=s.qty; db.sales=db.sales.filter(function(x){return x.id!==id;}); save(); toast('Sale deleted, stock restored'); renderAll();}
+});
+
+/* expenses */
+function renderExp(){
+  var L=db.expenses.slice().sort(function(a,b){return a.date<b.date?1:(a.date>b.date?-1:0);}).slice(0,100);
+  $('eList').innerHTML=L.length?L.map(function(x){return '<div class="item"><div class="top"><b>'+esc(x.desc)+'</b><b>'+money(x.amount)+'</b></div><div class="meta">'+esc(x.date)+' &middot; '+esc(x.cat)+'</div><button class="sm danger" data-id="'+x.id+'">Delete</button></div>';}).join(''):'<div class="empty">No expenses recorded yet.</div>';
+}
+$('eSave').onclick=function(){
+  var desc=$('eDesc').value.trim(), amt=num($('eAmt').value);
+  if(!desc||amt<=0){say('eMsg','Enter a description and an amount above zero.','bad'); return;}
+  db.expenses.push({id:uid(),desc:desc,amount:amt,cat:$('eCat').value,date:$('eDate').value||today()});
+  save(); say('eMsg','Expense added.','good'); $('eDesc').value=''; $('eAmt').value=''; renderAll();
+};
+$('eList').addEventListener('click',function(e){
+  var b=e.target.closest('button'); if(!b) return; var id=b.dataset.id;
+  if(arm('e'+id,b)){db.expenses=db.expenses.filter(function(x){return x.id!==id;}); save(); toast('Expense deleted'); renderAll();}
+});
+
+/* settings, backup */
+$('stSave').onclick=function(){db.settings.biz=$('stBiz').value.trim(); db.settings.cur=$('stCur').value.trim()||'$'; save(); toast('Settings saved'); renderAll();};
+$('bMake').onclick=function(){$('bText').value=JSON.stringify(db); say('bMsg','Backup created. Copy the text above and keep it safe.','good');};
+$('bDl').onclick=function(){
+  try{var blob=new Blob([JSON.stringify(db)],{type:'application/json'}); var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='business-backup-'+today()+'.json'; document.body.appendChild(a); a.click(); a.remove(); say('bMsg','If no file appeared, use the backup text option instead.');}
+  catch(e){say('bMsg','Download is not available here. Use the backup text option.','bad');}
+};
+$('bRestore').onclick=function(){
+  try{var d=JSON.parse($('bText').value); if(!d||!Array.isArray(d.products)) throw new Error('bad');
+    db.products=d.products; db.sales=d.sales||[]; db.expenses=d.expenses||[]; db.settings=Object.assign({cur:'$',biz:''},d.settings||{});
+    save(); say('bMsg','Backup restored.','good'); renderAll();}
+  catch(e){say('bMsg','That backup text is not valid.','bad');}
+};
+$('sampleBtn').onclick=function(){
+  var a={id:uid(),name:'Blue T-shirt',cost:6,price:15,stock:40,low:8}, b={id:uid(),name:'Phone case',cost:2,price:7,stock:25,low:6}, c={id:uid(),name:'Coffee mug',cost:3,price:9,stock:6,low:6};
+  db.products=db.products.concat([a,b,c]);
+  [[a,5,2],[b,8,1],[c,4,0],[a,3,4],[b,6,3]].forEach(function(x){var p=x[0]; p.stock-=x[1]; db.sales.push({id:uid(),pid:p.id,name:p.name,qty:x[1],price:p.price,cost:p.cost,date:dayStr(x[2])});});
+  db.expenses.push({id:uid(),desc:'Shop rent',amount:60,cat:'Rent',date:dayStr(1)});
+  save(); say('rMsg','Sample data added.','good'); renderAll();
+};
+$('resetBtn').onclick=function(){
+  if(arm('reset',$('resetBtn'))){db={products:[],sales:[],expenses:[],settings:{cur:'$',biz:''}}; save(); say('rMsg','All data erased.','good'); renderAll();}
+};
+$('period').onchange=renderDash;
+
+function renderAll(){
+  armed=null;
+  $('stBiz').value=db.settings.biz; $('stCur').value=db.settings.cur;
+  renderDash(); renderProducts(); renderSales(); renderExp();
+  document.querySelectorAll('button.sm.danger').forEach(function(b){if(b.textContent.indexOf('Tap')===0) b.textContent='Delete';});
+  $('resetBtn').textContent='Erase all data';
+}
+load(); $('sDate').value=today(); $('eDate').value=today(); renderAll();
+})();
+</script>
+</body>
+</html>
